@@ -7,6 +7,14 @@ class Solution:
             else:
                 _count[i] = 1
         return max(_count, key=_count.get)
+class Solution2:
+    def majorityElement(self, nums):
+        result, count = 0, 0
+        for i in nums:
+            if count == 0:
+                result = i
+            count += 1 if i == result else -1
+        return result
 
 
 # AFTER SUBMISSION 
